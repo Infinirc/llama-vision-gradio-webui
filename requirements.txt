@@ -1,0 +1,3 @@
+torch
+spaces
+git+https://github.com/huggingface/transformers.git
