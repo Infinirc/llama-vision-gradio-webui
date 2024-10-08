@@ -9,7 +9,7 @@ import time
 import spaces
 
 # 需要修改模型路径
-ckpt = "/home/rickychen/桌面/llm/models/test"
+ckpt = "/home/rickychen/桌面/llm/models/test1"
 model = MllamaForConditionalGeneration.from_pretrained(ckpt,
     torch_dtype=torch.bfloat16).to("cuda")
 processor = AutoProcessor.from_pretrained(ckpt)
@@ -99,4 +99,4 @@ demo = gr.ChatInterface(fn=bot_streaming, title="Multimodal Llama", examples=[
       fill_height=True,
     multimodal=True)
     
-demo.launch(debug=True)
+demo.launch(debug=True, server_name="0.0.0.0")
